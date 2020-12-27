@@ -86,6 +86,14 @@ To make the memory game easier to try out in "tttool play" all OIDs that are pri
 * "r" for the repeat field
 * "c0" - "cN" for the cards
 
+## Caveats
+
+I had some real issues with the TipToi pen that introduces some additional delay of almost 2 seconds whenever a command line ended with a J() command.
+With the help from others on the tttool mailinglist I found out that this delay does not occur if the J() command is followed by a P() command (and the TipToi pen still plays out the P() command before jumping to the new script.)
+The memory script makes heavily use of this. As an additional workaround I added a very short sound file, called "nop". And in any command line that has no P() command but requires a J() command I added a P(nop) after J(). This is not a perfect solution that still is not blazingly fast, which can be noticed when the cards are shuffled and a bunch of "nop" sounds are played, but it was the only way I could get it to work.
+
+For printing, I ended up using 3mm pixel size instead of the 2mm default value used by tttool. I had better experience with it and that the fields become a bit gray does really not matter for the memory game.
+
 ## Acknowledgements
 
 A big thank you goes to the creators of [tttool](https://github.com/entropia/tip-toi-reveng) - a really great tool!
