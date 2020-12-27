@@ -1,0 +1,59 @@
+product-id: 910
+
+gme-lang: FRENCH
+comment: CHOMPTECH DATA FORMAT CopyRight 2009 Ver2.xx.yyyy
+
+memory:
+  title: Animaux de la ferme
+  maxPlayers: 4
+  dpi: 1200
+  pixelSize: 3
+  alternativeSounds: false
+  pairs:
+    - cat
+    - cow
+    - dog
+    - donkey
+    - goat
+    - goose
+    - horse
+    - pig
+    - rooster
+    - sheep
+
+welcome: fr_hello
+language: fr
+
+media-path: media/%s
+
+speak:
+  fr_hello: Bienvenue au Memory. Vous êtes combien de joueurs?
+  fr_shuffle: Les cartes vont être mélangées.
+  fr_start: Le jeu commence.
+  fr_not_started: Choisissez d'abord le nombre de joueurs avant de commencer le jeu.
+  fr_player1: C'est le tour du premier joueur.
+  fr_player2: C'est le tour du deuxième joueur.
+  fr_player3: C'est le tour du troisième joueur.
+  fr_player4: C'est le tour du quatrième joueur.
+  fr_empty: Cette case est vide. Choisi une autre case.
+  fr_match: Super, tu as trouvé une paire.
+  fr_continue: Tu peux continuer.
+  fr_winner1: Le premier joueur à gagné.
+  fr_winner2: Le deuxième joueur à gagné.
+  fr_winner3: Le troisième joueur à gagné.
+  fr_winner4: Le quatrième joueur à gagné.
+  fr_draw: C'est un match nul.
+  fr_not_playing: Ce joueur ne joue pas.
+  fr_finished: Le jeu est terminé.
+
+  fr_pairs0: Aucune pair
+  fr_pairs1: Une paire
+  fr_pairs2: 2 paires
+  fr_pairs3: 3 paires
+  fr_pairs4: 4 paires
+  fr_pairs5: 5 paires
+  fr_pairs6: 6 paires
+  fr_pairs7: 7 paires
+  fr_pairs8: 8 paires
+  fr_pairs9: 9 paires
+  fr_pairs10: 10 paires

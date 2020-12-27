@@ -1,0 +1,676 @@
+comment: CHOMPTECH DATA FORMAT CopyRight 2009 Ver2.xx.yyyy
+gme-lang: ENGLISH
+init: $c0:=1 $c1:=2 $c2:=3 $c3:=4 $c4:=5 $c5:=6 $c6:=7 $c7:=8 $c8:=9 $c9:=10 $c10:=11 $c11:=12 $c12:=13 $c13:=14 $c14:=15 $c15:=16 $c16:=17 $c17:=18 $c18:=19 $c19:=20 $remaining:=10 $player:=1
+language: en
+media-path: media/%s
+product-id: 912
+scriptcodes:
+  c0: 3000
+  c1: 3001
+  c10: 3010
+  c11: 3011
+  c12: 3012
+  c13: 3013
+  c14: 3014
+  c15: 3015
+  c16: 3016
+  c17: 3017
+  c18: 3018
+  c19: 3019
+  c2: 3002
+  c3: 3003
+  c4: 3004
+  c5: 3005
+  c6: 3006
+  c7: 3007
+  c8: 3008
+  c9: 3009
+  clear1: 4024
+  clear2: 4025
+  firstCard: 4021
+  idle: 4000
+  p1: 2002
+  p2: 2003
+  p3: 2004
+  p4: 2005
+  q: 2000
+  r: 2001
+  restart0: 4026
+  restart1: 4027
+  restart2: 4028
+  restart3: 4029
+  restart4: 4030
+  restart5: 4031
+  restart6: 4032
+  secondCard: 4022
+  shuffle: 4001
+  shuffle0: 4002
+  shuffle1: 4003
+  shuffle10: 4012
+  shuffle11: 4013
+  shuffle12: 4014
+  shuffle13: 4015
+  shuffle14: 4016
+  shuffle15: 4017
+  shuffle16: 4018
+  shuffle17: 4019
+  shuffle18: 4020
+  shuffle2: 4004
+  shuffle3: 4005
+  shuffle4: 4006
+  shuffle5: 4007
+  shuffle6: 4008
+  shuffle7: 4009
+  shuffle8: 4010
+  shuffle9: 4011
+  test: 4023
+scripts:
+  c0:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c0==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c0 $pos1:=0 $lastCard:=$c0 $lastPos:=0 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c0? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c0? $card2:=$c0 $pos2:=0 $lastCard:=$c0 $lastPos:=0 $busy:=1 J(secondCard) P(nop)
+  c1:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c1==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c1 $pos1:=1 $lastCard:=$c1 $lastPos:=1 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c1? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c1? $card2:=$c1 $pos2:=1 $lastCard:=$c1 $lastPos:=1 $busy:=1 J(secondCard) P(nop)
+  c10:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c10==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c10 $pos1:=10 $lastCard:=$c10 $lastPos:=10 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c10? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c10? $card2:=$c10 $pos2:=10 $lastCard:=$c10 $lastPos:=10 $busy:=1 J(secondCard) P(nop)
+  c11:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c11==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c11 $pos1:=11 $lastCard:=$c11 $lastPos:=11 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c11? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c11? $card2:=$c11 $pos2:=11 $lastCard:=$c11 $lastPos:=11 $busy:=1 J(secondCard) P(nop)
+  c12:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c12==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c12 $pos1:=12 $lastCard:=$c12 $lastPos:=12 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c12? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c12? $card2:=$c12 $pos2:=12 $lastCard:=$c12 $lastPos:=12 $busy:=1 J(secondCard) P(nop)
+  c13:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c13==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c13 $pos1:=13 $lastCard:=$c13 $lastPos:=13 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c13? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c13? $card2:=$c13 $pos2:=13 $lastCard:=$c13 $lastPos:=13 $busy:=1 J(secondCard) P(nop)
+  c14:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c14==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c14 $pos1:=14 $lastCard:=$c14 $lastPos:=14 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c14? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c14? $card2:=$c14 $pos2:=14 $lastCard:=$c14 $lastPos:=14 $busy:=1 J(secondCard) P(nop)
+  c15:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c15==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c15 $pos1:=15 $lastCard:=$c15 $lastPos:=15 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c15? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c15? $card2:=$c15 $pos2:=15 $lastCard:=$c15 $lastPos:=15 $busy:=1 J(secondCard) P(nop)
+  c16:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c16==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c16 $pos1:=16 $lastCard:=$c16 $lastPos:=16 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c16? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c16? $card2:=$c16 $pos2:=16 $lastCard:=$c16 $lastPos:=16 $busy:=1 J(secondCard) P(nop)
+  c17:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c17==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c17 $pos1:=17 $lastCard:=$c17 $lastPos:=17 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c17? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c17? $card2:=$c17 $pos2:=17 $lastCard:=$c17 $lastPos:=17 $busy:=1 J(secondCard) P(nop)
+  c18:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c18==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c18 $pos1:=18 $lastCard:=$c18 $lastPos:=18 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c18? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c18? $card2:=$c18 $pos2:=18 $lastCard:=$c18 $lastPos:=18 $busy:=1 J(secondCard) P(nop)
+  c19:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c19==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c19 $pos1:=19 $lastCard:=$c19 $lastPos:=19 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c19? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c19? $card2:=$c19 $pos2:=19 $lastCard:=$c19 $lastPos:=19 $busy:=1 J(secondCard) P(nop)
+  c2:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c2==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c2 $pos1:=2 $lastCard:=$c2 $lastPos:=2 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c2? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c2? $card2:=$c2 $pos2:=2 $lastCard:=$c2 $lastPos:=2 $busy:=1 J(secondCard) P(nop)
+  c3:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c3==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c3 $pos1:=3 $lastCard:=$c3 $lastPos:=3 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c3? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c3? $card2:=$c3 $pos2:=3 $lastCard:=$c3 $lastPos:=3 $busy:=1 J(secondCard) P(nop)
+  c4:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c4==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c4 $pos1:=4 $lastCard:=$c4 $lastPos:=4 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c4? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c4? $card2:=$c4 $pos2:=4 $lastCard:=$c4 $lastPos:=4 $busy:=1 J(secondCard) P(nop)
+  c5:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c5==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c5 $pos1:=5 $lastCard:=$c5 $lastPos:=5 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c5? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c5? $card2:=$c5 $pos2:=5 $lastCard:=$c5 $lastPos:=5 $busy:=1 J(secondCard) P(nop)
+  c6:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c6==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c6 $pos1:=6 $lastCard:=$c6 $lastPos:=6 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c6? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c6? $card2:=$c6 $pos2:=6 $lastCard:=$c6 $lastPos:=6 $busy:=1 J(secondCard) P(nop)
+  c7:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c7==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c7 $pos1:=7 $lastCard:=$c7 $lastPos:=7 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c7? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c7? $card2:=$c7 $pos2:=7 $lastCard:=$c7 $lastPos:=7 $busy:=1 J(secondCard) P(nop)
+  c8:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c8==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c8 $pos1:=8 $lastCard:=$c8 $lastPos:=8 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c8? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c8? $card2:=$c8 $pos2:=8 $lastCard:=$c8 $lastPos:=8 $busy:=1 J(secondCard) P(nop)
+  c9:
+  - $players==0? P(en_not_started)
+  - $remaining==0? P(en_finished)
+  - $busy==0? $c9==0? $busy:=1 J(idle) P(en_empty)
+  - $busy==0? $card1==0? $card1:=$c9 $pos1:=9 $lastCard:=$c9 $lastPos:=9 $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1==$c9? $busy:=1 J(firstCard) P(nop)
+  - $busy==0? $card1!=$c9? $card2:=$c9 $pos2:=9 $lastCard:=$c9 $lastPos:=9 $busy:=1 J(secondCard) P(nop)
+  clear1:
+  - $remaining==0? $busy:=0 J(q) P(en_finished)
+  - $pos1==0? $c0:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==1? $c1:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==2? $c2:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==3? $c3:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==4? $c4:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==5? $c5:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==6? $c6:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==7? $c7:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==8? $c8:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==9? $c9:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==10? $c10:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==11? $c11:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==12? $c12:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==13? $c13:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==14? $c14:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==15? $c15:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==16? $c16:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==17? $c17:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==18? $c18:=0 $pos1:=0 J(clear2) P(nop)
+  - $pos1==19? $c19:=0 $pos1:=0 J(clear2) P(nop)
+  clear2:
+  - $pos2==0? $c0:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==1? $c1:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==2? $c2:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==3? $c3:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==4? $c4:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==5? $c5:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==6? $c6:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==7? $c7:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==8? $c8:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==9? $c9:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==10? $c10:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==11? $c11:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==12? $c12:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==13? $c13:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==14? $c14:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==15? $c15:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==16? $c16:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==17? $c17:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==18? $c18:=0 $pos2:=0 J(idle) P(en_continue)
+  - $pos2==19? $c19:=0 $pos2:=0 J(idle) P(en_continue)
+  firstCard:
+  - $card1==1? J(idle) P(cat)
+  - $card1==2? J(idle) P(cow)
+  - $card1==3? J(idle) P(dog)
+  - $card1==4? J(idle) P(donkey)
+  - $card1==5? J(idle) P(goat)
+  - $card1==6? J(idle) P(goose)
+  - $card1==7? J(idle) P(horse)
+  - $card1==8? J(idle) P(pig)
+  - $card1==9? J(idle) P(rooster)
+  - $card1==10? J(idle) P(sheep)
+  - $card1==11? J(idle) P(sheep)
+  - $card1==12? J(idle) P(rooster)
+  - $card1==13? J(idle) P(pig)
+  - $card1==14? J(idle) P(horse)
+  - $card1==15? J(idle) P(goose)
+  - $card1==16? J(idle) P(goat)
+  - $card1==17? J(idle) P(donkey)
+  - $card1==18? J(idle) P(dog)
+  - $card1==19? J(idle) P(cow)
+  - $card1==20? J(idle) P(cat)
+  idle: $busy:=0
+  p1:
+  - $players==0? $players:=1 $busy:=1 T($random, 65535) J(shuffle) P(en_shuffle)
+  - $busy==0? $players<1? $busy:=1 J(idle) P(en_not_playing)
+  - $busy==0? $pairs1==0? $busy:=1 J(idle) P(en_pairs0)
+  - $busy==0? $pairs1==1? $busy:=1 J(idle) P(en_pairs1)
+  - $busy==0? $pairs1==2? $busy:=1 J(idle) P(en_pairs2)
+  - $busy==0? $pairs1==3? $busy:=1 J(idle) P(en_pairs3)
+  - $busy==0? $pairs1==4? $busy:=1 J(idle) P(en_pairs4)
+  - $busy==0? $pairs1==5? $busy:=1 J(idle) P(en_pairs5)
+  - $busy==0? $pairs1==6? $busy:=1 J(idle) P(en_pairs6)
+  - $busy==0? $pairs1==7? $busy:=1 J(idle) P(en_pairs7)
+  - $busy==0? $pairs1==8? $busy:=1 J(idle) P(en_pairs8)
+  - $busy==0? $pairs1==9? $busy:=1 J(idle) P(en_pairs9)
+  - $busy==0? $pairs1==10? $busy:=1 J(idle) P(en_pairs10)
+  p2:
+  - $players==0? $players:=2 $busy:=1 T($random, 65535) J(shuffle) P(en_shuffle)
+  - $busy==0? $players<2? $busy:=1 J(idle) P(en_not_playing)
+  - $busy==0? $pairs2==0? $busy:=1 J(idle) P(en_pairs0)
+  - $busy==0? $pairs2==1? $busy:=1 J(idle) P(en_pairs1)
+  - $busy==0? $pairs2==2? $busy:=1 J(idle) P(en_pairs2)
+  - $busy==0? $pairs2==3? $busy:=1 J(idle) P(en_pairs3)
+  - $busy==0? $pairs2==4? $busy:=1 J(idle) P(en_pairs4)
+  - $busy==0? $pairs2==5? $busy:=1 J(idle) P(en_pairs5)
+  - $busy==0? $pairs2==6? $busy:=1 J(idle) P(en_pairs6)
+  - $busy==0? $pairs2==7? $busy:=1 J(idle) P(en_pairs7)
+  - $busy==0? $pairs2==8? $busy:=1 J(idle) P(en_pairs8)
+  - $busy==0? $pairs2==9? $busy:=1 J(idle) P(en_pairs9)
+  - $busy==0? $pairs2==10? $busy:=1 J(idle) P(en_pairs10)
+  p3:
+  - $players==0? $players:=3 $busy:=1 T($random, 65535) J(shuffle) P(en_shuffle)
+  - $busy==0? $players<3? $busy:=1 J(idle) P(en_not_playing)
+  - $busy==0? $pairs3==0? $busy:=1 J(idle) P(en_pairs0)
+  - $busy==0? $pairs3==1? $busy:=1 J(idle) P(en_pairs1)
+  - $busy==0? $pairs3==2? $busy:=1 J(idle) P(en_pairs2)
+  - $busy==0? $pairs3==3? $busy:=1 J(idle) P(en_pairs3)
+  - $busy==0? $pairs3==4? $busy:=1 J(idle) P(en_pairs4)
+  - $busy==0? $pairs3==5? $busy:=1 J(idle) P(en_pairs5)
+  - $busy==0? $pairs3==6? $busy:=1 J(idle) P(en_pairs6)
+  - $busy==0? $pairs3==7? $busy:=1 J(idle) P(en_pairs7)
+  - $busy==0? $pairs3==8? $busy:=1 J(idle) P(en_pairs8)
+  - $busy==0? $pairs3==9? $busy:=1 J(idle) P(en_pairs9)
+  - $busy==0? $pairs3==10? $busy:=1 J(idle) P(en_pairs10)
+  p4:
+  - $players==0? $players:=4 $busy:=1 T($random, 65535) J(shuffle) P(en_shuffle)
+  - $busy==0? $players<4? $busy:=1 J(idle) P(en_not_playing)
+  - $busy==0? $pairs4==0? $busy:=1 J(idle) P(en_pairs0)
+  - $busy==0? $pairs4==1? $busy:=1 J(idle) P(en_pairs1)
+  - $busy==0? $pairs4==2? $busy:=1 J(idle) P(en_pairs2)
+  - $busy==0? $pairs4==3? $busy:=1 J(idle) P(en_pairs3)
+  - $busy==0? $pairs4==4? $busy:=1 J(idle) P(en_pairs4)
+  - $busy==0? $pairs4==5? $busy:=1 J(idle) P(en_pairs5)
+  - $busy==0? $pairs4==6? $busy:=1 J(idle) P(en_pairs6)
+  - $busy==0? $pairs4==7? $busy:=1 J(idle) P(en_pairs7)
+  - $busy==0? $pairs4==8? $busy:=1 J(idle) P(en_pairs8)
+  - $busy==0? $pairs4==9? $busy:=1 J(idle) P(en_pairs9)
+  - $busy==0? $pairs4==10? $busy:=1 J(idle) P(en_pairs10)
+  q:
+  - $busy==0? $players==0? $busy:=1 J(idle) P(en_not_started)
+  - $busy==0? $remaining>0? $player==1? $busy:=1 J(idle) P(en_player1)
+  - $busy==0? $remaining>0? $player==2? $busy:=1 J(idle) P(en_player2)
+  - $busy==0? $remaining>0? $player==3? $busy:=1 J(idle) P(en_player3)
+  - $busy==0? $remaining>0? $player==4? $busy:=1 J(idle) P(en_player4)
+  - $busy==0? $pairs1>$pairs2? $pairs1>$pairs3? $pairs1>$pairs4? $busy:=1 J(idle) P(en_winner1)
+  - $busy==0? $pairs2>$pairs1? $pairs2>$pairs3? $pairs2>$pairs4? $busy:=1 J(idle) P(en_winner2)
+  - $busy==0? $pairs3>$pairs1? $pairs3>$pairs2? $pairs3>$pairs4? $busy:=1 J(idle) P(en_winner3)
+  - $busy==0? $pairs4>$pairs1? $pairs4>$pairs2? $pairs4>$pairs3? $busy:=1 J(idle) P(en_winner4)
+  - $busy==0? $busy:=1 J(idle) P(en_draw)
+  r:
+  - $busy==0? $remaining==0? $busy:=1 J(restart0) P(nop)
+  - $busy==0? $lastCard==1? $busy:=1 J(idle) P(cat)
+  - $busy==0? $lastCard==2? $busy:=1 J(idle) P(cow)
+  - $busy==0? $lastCard==3? $busy:=1 J(idle) P(dog)
+  - $busy==0? $lastCard==4? $busy:=1 J(idle) P(donkey)
+  - $busy==0? $lastCard==5? $busy:=1 J(idle) P(goat)
+  - $busy==0? $lastCard==6? $busy:=1 J(idle) P(goose)
+  - $busy==0? $lastCard==7? $busy:=1 J(idle) P(horse)
+  - $busy==0? $lastCard==8? $busy:=1 J(idle) P(pig)
+  - $busy==0? $lastCard==9? $busy:=1 J(idle) P(rooster)
+  - $busy==0? $lastCard==10? $busy:=1 J(idle) P(sheep)
+  - $busy==0? $lastCard==11? $busy:=1 J(idle) P(sheep)
+  - $busy==0? $lastCard==12? $busy:=1 J(idle) P(rooster)
+  - $busy==0? $lastCard==13? $busy:=1 J(idle) P(pig)
+  - $busy==0? $lastCard==14? $busy:=1 J(idle) P(horse)
+  - $busy==0? $lastCard==15? $busy:=1 J(idle) P(goose)
+  - $busy==0? $lastCard==16? $busy:=1 J(idle) P(goat)
+  - $busy==0? $lastCard==17? $busy:=1 J(idle) P(donkey)
+  - $busy==0? $lastCard==18? $busy:=1 J(idle) P(dog)
+  - $busy==0? $lastCard==19? $busy:=1 J(idle) P(cow)
+  - $busy==0? $lastCard==20? $busy:=1 J(idle) P(cat)
+  restart0: $c0:=1 $c1:=2 $c2:=3 $c3:=4 $c4:=5 $c5:=6 J(restart1) P(nop)
+  restart1: $c6:=7 $c7:=8 $c8:=9 $c9:=10 $c10:=11 $c11:=12 J(restart2) P(nop)
+  restart2: $c12:=13 $c13:=14 $c14:=15 $c15:=16 $c16:=17 $c17:=18 J(restart3) P(nop)
+  restart3: $c18:=19 $c19:=20 $remaining:=10 $player:=1 $players:=0 $random:=0 J(restart4) P(nop)
+  restart4: $pairs1:=0 $pairs2:=0 $pairs3:=0 $pairs4:=0 $lastCard:=0 $rnd:=0 J(restart5) P(nop)
+  restart5: $pos:=0 $t:=0 $card1:=0 $pos1:=0 $lastPos:=0 $card2:=0 J(restart6) P(nop)
+  restart6: $pos2:=0 $sum:=0 J(idle) P(en_hello)
+  secondCard:
+  - $card2==1? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(cat)
+  - $card2==2? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(cow)
+  - $card2==3? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(dog)
+  - $card2==4? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(donkey)
+  - $card2==5? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(goat)
+  - $card2==6? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(goose)
+  - $card2==7? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(horse)
+  - $card2==8? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(pig)
+  - $card2==9? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(rooster)
+  - $card2==10? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(sheep)
+  - $card2==11? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(sheep)
+  - $card2==12? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(rooster)
+  - $card2==13? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(pig)
+  - $card2==14? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(horse)
+  - $card2==15? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(goose)
+  - $card2==16? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(goat)
+  - $card2==17? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(donkey)
+  - $card2==18? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(dog)
+  - $card2==19? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(cow)
+  - $card2==20? $sum:=$card1 $sum+=$card2 $card1:=0 $card2:=0 J(test) P(cat)
+  shuffle: $random*=25173 $random+=13849 $rnd:=$random $pos:=$rnd $pos%=20 $rnd/=20 J(shuffle0) P(nop)
+  shuffle0:
+  - $rnd<190? $random*=25173 $random+=13849 $rnd:=$random J(shuffle0) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==1? $t:=$c0 $c0:=$c1 $c1:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==2? $t:=$c0 $c0:=$c2 $c2:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==3? $t:=$c0 $c0:=$c3 $c3:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==4? $t:=$c0 $c0:=$c4 $c4:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==5? $t:=$c0 $c0:=$c5 $c5:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==6? $t:=$c0 $c0:=$c6 $c6:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==7? $t:=$c0 $c0:=$c7 $c7:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==8? $t:=$c0 $c0:=$c8 $c8:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==9? $t:=$c0 $c0:=$c9 $c9:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==10? $t:=$c0 $c0:=$c10 $c10:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==11? $t:=$c0 $c0:=$c11 $c11:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==12? $t:=$c0 $c0:=$c12 $c12:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==13? $t:=$c0 $c0:=$c13 $c13:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==14? $t:=$c0 $c0:=$c14 $c14:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==15? $t:=$c0 $c0:=$c15 $c15:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==16? $t:=$c0 $c0:=$c16 $c16:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==17? $t:=$c0 $c0:=$c17 $c17:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==18? $t:=$c0 $c0:=$c18 $c18:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  - $pos==19? $t:=$c0 $c0:=$c19 $c19:=$t $pos:=$rnd $pos%=19 $rnd/=19 J(shuffle1) P(nop)
+  shuffle1:
+  - $rnd<180? $random*=25173 $random+=13849 $rnd:=$random J(shuffle1) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==1? $t:=$c1 $c1:=$c2 $c2:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==2? $t:=$c1 $c1:=$c3 $c3:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==3? $t:=$c1 $c1:=$c4 $c4:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==4? $t:=$c1 $c1:=$c5 $c5:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==5? $t:=$c1 $c1:=$c6 $c6:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==6? $t:=$c1 $c1:=$c7 $c7:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==7? $t:=$c1 $c1:=$c8 $c8:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==8? $t:=$c1 $c1:=$c9 $c9:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==9? $t:=$c1 $c1:=$c10 $c10:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==10? $t:=$c1 $c1:=$c11 $c11:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==11? $t:=$c1 $c1:=$c12 $c12:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==12? $t:=$c1 $c1:=$c13 $c13:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==13? $t:=$c1 $c1:=$c14 $c14:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==14? $t:=$c1 $c1:=$c15 $c15:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==15? $t:=$c1 $c1:=$c16 $c16:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==16? $t:=$c1 $c1:=$c17 $c17:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==17? $t:=$c1 $c1:=$c18 $c18:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  - $pos==18? $t:=$c1 $c1:=$c19 $c19:=$t $pos:=$rnd $pos%=18 $rnd/=18 J(shuffle2) P(nop)
+  shuffle10:
+  - $rnd<90? $random*=25173 $random+=13849 $rnd:=$random J(shuffle10) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=9 $rnd/=9 J(shuffle11) P(nop)
+  - $pos==1? $t:=$c10 $c10:=$c11 $c11:=$t $pos:=$rnd $pos%=9 $rnd/=9 J(shuffle11) P(nop)
+  - $pos==2? $t:=$c10 $c10:=$c12 $c12:=$t $pos:=$rnd $pos%=9 $rnd/=9 J(shuffle11) P(nop)
+  - $pos==3? $t:=$c10 $c10:=$c13 $c13:=$t $pos:=$rnd $pos%=9 $rnd/=9 J(shuffle11) P(nop)
+  - $pos==4? $t:=$c10 $c10:=$c14 $c14:=$t $pos:=$rnd $pos%=9 $rnd/=9 J(shuffle11) P(nop)
+  - $pos==5? $t:=$c10 $c10:=$c15 $c15:=$t $pos:=$rnd $pos%=9 $rnd/=9 J(shuffle11) P(nop)
+  - $pos==6? $t:=$c10 $c10:=$c16 $c16:=$t $pos:=$rnd $pos%=9 $rnd/=9 J(shuffle11) P(nop)
+  - $pos==7? $t:=$c10 $c10:=$c17 $c17:=$t $pos:=$rnd $pos%=9 $rnd/=9 J(shuffle11) P(nop)
+  - $pos==8? $t:=$c10 $c10:=$c18 $c18:=$t $pos:=$rnd $pos%=9 $rnd/=9 J(shuffle11) P(nop)
+  - $pos==9? $t:=$c10 $c10:=$c19 $c19:=$t $pos:=$rnd $pos%=9 $rnd/=9 J(shuffle11) P(nop)
+  shuffle11:
+  - $rnd<80? $random*=25173 $random+=13849 $rnd:=$random J(shuffle11) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=8 $rnd/=8 J(shuffle12) P(nop)
+  - $pos==1? $t:=$c11 $c11:=$c12 $c12:=$t $pos:=$rnd $pos%=8 $rnd/=8 J(shuffle12) P(nop)
+  - $pos==2? $t:=$c11 $c11:=$c13 $c13:=$t $pos:=$rnd $pos%=8 $rnd/=8 J(shuffle12) P(nop)
+  - $pos==3? $t:=$c11 $c11:=$c14 $c14:=$t $pos:=$rnd $pos%=8 $rnd/=8 J(shuffle12) P(nop)
+  - $pos==4? $t:=$c11 $c11:=$c15 $c15:=$t $pos:=$rnd $pos%=8 $rnd/=8 J(shuffle12) P(nop)
+  - $pos==5? $t:=$c11 $c11:=$c16 $c16:=$t $pos:=$rnd $pos%=8 $rnd/=8 J(shuffle12) P(nop)
+  - $pos==6? $t:=$c11 $c11:=$c17 $c17:=$t $pos:=$rnd $pos%=8 $rnd/=8 J(shuffle12) P(nop)
+  - $pos==7? $t:=$c11 $c11:=$c18 $c18:=$t $pos:=$rnd $pos%=8 $rnd/=8 J(shuffle12) P(nop)
+  - $pos==8? $t:=$c11 $c11:=$c19 $c19:=$t $pos:=$rnd $pos%=8 $rnd/=8 J(shuffle12) P(nop)
+  shuffle12:
+  - $rnd<70? $random*=25173 $random+=13849 $rnd:=$random J(shuffle12) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=7 $rnd/=7 J(shuffle13) P(nop)
+  - $pos==1? $t:=$c12 $c12:=$c13 $c13:=$t $pos:=$rnd $pos%=7 $rnd/=7 J(shuffle13) P(nop)
+  - $pos==2? $t:=$c12 $c12:=$c14 $c14:=$t $pos:=$rnd $pos%=7 $rnd/=7 J(shuffle13) P(nop)
+  - $pos==3? $t:=$c12 $c12:=$c15 $c15:=$t $pos:=$rnd $pos%=7 $rnd/=7 J(shuffle13) P(nop)
+  - $pos==4? $t:=$c12 $c12:=$c16 $c16:=$t $pos:=$rnd $pos%=7 $rnd/=7 J(shuffle13) P(nop)
+  - $pos==5? $t:=$c12 $c12:=$c17 $c17:=$t $pos:=$rnd $pos%=7 $rnd/=7 J(shuffle13) P(nop)
+  - $pos==6? $t:=$c12 $c12:=$c18 $c18:=$t $pos:=$rnd $pos%=7 $rnd/=7 J(shuffle13) P(nop)
+  - $pos==7? $t:=$c12 $c12:=$c19 $c19:=$t $pos:=$rnd $pos%=7 $rnd/=7 J(shuffle13) P(nop)
+  shuffle13:
+  - $rnd<60? $random*=25173 $random+=13849 $rnd:=$random J(shuffle13) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=6 $rnd/=6 J(shuffle14) P(nop)
+  - $pos==1? $t:=$c13 $c13:=$c14 $c14:=$t $pos:=$rnd $pos%=6 $rnd/=6 J(shuffle14) P(nop)
+  - $pos==2? $t:=$c13 $c13:=$c15 $c15:=$t $pos:=$rnd $pos%=6 $rnd/=6 J(shuffle14) P(nop)
+  - $pos==3? $t:=$c13 $c13:=$c16 $c16:=$t $pos:=$rnd $pos%=6 $rnd/=6 J(shuffle14) P(nop)
+  - $pos==4? $t:=$c13 $c13:=$c17 $c17:=$t $pos:=$rnd $pos%=6 $rnd/=6 J(shuffle14) P(nop)
+  - $pos==5? $t:=$c13 $c13:=$c18 $c18:=$t $pos:=$rnd $pos%=6 $rnd/=6 J(shuffle14) P(nop)
+  - $pos==6? $t:=$c13 $c13:=$c19 $c19:=$t $pos:=$rnd $pos%=6 $rnd/=6 J(shuffle14) P(nop)
+  shuffle14:
+  - $rnd<50? $random*=25173 $random+=13849 $rnd:=$random J(shuffle14) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=5 $rnd/=5 J(shuffle15) P(nop)
+  - $pos==1? $t:=$c14 $c14:=$c15 $c15:=$t $pos:=$rnd $pos%=5 $rnd/=5 J(shuffle15) P(nop)
+  - $pos==2? $t:=$c14 $c14:=$c16 $c16:=$t $pos:=$rnd $pos%=5 $rnd/=5 J(shuffle15) P(nop)
+  - $pos==3? $t:=$c14 $c14:=$c17 $c17:=$t $pos:=$rnd $pos%=5 $rnd/=5 J(shuffle15) P(nop)
+  - $pos==4? $t:=$c14 $c14:=$c18 $c18:=$t $pos:=$rnd $pos%=5 $rnd/=5 J(shuffle15) P(nop)
+  - $pos==5? $t:=$c14 $c14:=$c19 $c19:=$t $pos:=$rnd $pos%=5 $rnd/=5 J(shuffle15) P(nop)
+  shuffle15:
+  - $rnd<40? $random*=25173 $random+=13849 $rnd:=$random J(shuffle15) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=4 $rnd/=4 J(shuffle16) P(nop)
+  - $pos==1? $t:=$c15 $c15:=$c16 $c16:=$t $pos:=$rnd $pos%=4 $rnd/=4 J(shuffle16) P(nop)
+  - $pos==2? $t:=$c15 $c15:=$c17 $c17:=$t $pos:=$rnd $pos%=4 $rnd/=4 J(shuffle16) P(nop)
+  - $pos==3? $t:=$c15 $c15:=$c18 $c18:=$t $pos:=$rnd $pos%=4 $rnd/=4 J(shuffle16) P(nop)
+  - $pos==4? $t:=$c15 $c15:=$c19 $c19:=$t $pos:=$rnd $pos%=4 $rnd/=4 J(shuffle16) P(nop)
+  shuffle16:
+  - $rnd<30? $random*=25173 $random+=13849 $rnd:=$random J(shuffle16) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=3 $rnd/=3 J(shuffle17) P(nop)
+  - $pos==1? $t:=$c16 $c16:=$c17 $c17:=$t $pos:=$rnd $pos%=3 $rnd/=3 J(shuffle17) P(nop)
+  - $pos==2? $t:=$c16 $c16:=$c18 $c18:=$t $pos:=$rnd $pos%=3 $rnd/=3 J(shuffle17) P(nop)
+  - $pos==3? $t:=$c16 $c16:=$c19 $c19:=$t $pos:=$rnd $pos%=3 $rnd/=3 J(shuffle17) P(nop)
+  shuffle17:
+  - $rnd<20? $random*=25173 $random+=13849 $rnd:=$random J(shuffle17) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=2 $rnd/=2 J(shuffle18) P(nop)
+  - $pos==1? $t:=$c17 $c17:=$c18 $c18:=$t $pos:=$rnd $pos%=2 $rnd/=2 J(shuffle18) P(nop)
+  - $pos==2? $t:=$c17 $c17:=$c19 $c19:=$t $pos:=$rnd $pos%=2 $rnd/=2 J(shuffle18) P(nop)
+  shuffle18:
+  - $pos==0? P(en_start) J(idle) P(en_player1)
+  - $pos==1? $t:=$c18 $c18:=$c19 $c19:=$t P(en_start) J(idle) P(en_player1)
+  shuffle2:
+  - $rnd<170? $random*=25173 $random+=13849 $rnd:=$random J(shuffle2) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==1? $t:=$c2 $c2:=$c3 $c3:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==2? $t:=$c2 $c2:=$c4 $c4:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==3? $t:=$c2 $c2:=$c5 $c5:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==4? $t:=$c2 $c2:=$c6 $c6:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==5? $t:=$c2 $c2:=$c7 $c7:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==6? $t:=$c2 $c2:=$c8 $c8:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==7? $t:=$c2 $c2:=$c9 $c9:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==8? $t:=$c2 $c2:=$c10 $c10:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==9? $t:=$c2 $c2:=$c11 $c11:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==10? $t:=$c2 $c2:=$c12 $c12:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==11? $t:=$c2 $c2:=$c13 $c13:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==12? $t:=$c2 $c2:=$c14 $c14:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==13? $t:=$c2 $c2:=$c15 $c15:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==14? $t:=$c2 $c2:=$c16 $c16:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==15? $t:=$c2 $c2:=$c17 $c17:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==16? $t:=$c2 $c2:=$c18 $c18:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  - $pos==17? $t:=$c2 $c2:=$c19 $c19:=$t $pos:=$rnd $pos%=17 $rnd/=17 J(shuffle3) P(nop)
+  shuffle3:
+  - $rnd<160? $random*=25173 $random+=13849 $rnd:=$random J(shuffle3) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==1? $t:=$c3 $c3:=$c4 $c4:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==2? $t:=$c3 $c3:=$c5 $c5:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==3? $t:=$c3 $c3:=$c6 $c6:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==4? $t:=$c3 $c3:=$c7 $c7:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==5? $t:=$c3 $c3:=$c8 $c8:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==6? $t:=$c3 $c3:=$c9 $c9:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==7? $t:=$c3 $c3:=$c10 $c10:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==8? $t:=$c3 $c3:=$c11 $c11:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==9? $t:=$c3 $c3:=$c12 $c12:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==10? $t:=$c3 $c3:=$c13 $c13:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==11? $t:=$c3 $c3:=$c14 $c14:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==12? $t:=$c3 $c3:=$c15 $c15:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==13? $t:=$c3 $c3:=$c16 $c16:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==14? $t:=$c3 $c3:=$c17 $c17:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==15? $t:=$c3 $c3:=$c18 $c18:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  - $pos==16? $t:=$c3 $c3:=$c19 $c19:=$t $pos:=$rnd $pos%=16 $rnd/=16 J(shuffle4) P(nop)
+  shuffle4:
+  - $rnd<150? $random*=25173 $random+=13849 $rnd:=$random J(shuffle4) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==1? $t:=$c4 $c4:=$c5 $c5:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==2? $t:=$c4 $c4:=$c6 $c6:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==3? $t:=$c4 $c4:=$c7 $c7:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==4? $t:=$c4 $c4:=$c8 $c8:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==5? $t:=$c4 $c4:=$c9 $c9:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==6? $t:=$c4 $c4:=$c10 $c10:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==7? $t:=$c4 $c4:=$c11 $c11:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==8? $t:=$c4 $c4:=$c12 $c12:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==9? $t:=$c4 $c4:=$c13 $c13:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==10? $t:=$c4 $c4:=$c14 $c14:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==11? $t:=$c4 $c4:=$c15 $c15:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==12? $t:=$c4 $c4:=$c16 $c16:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==13? $t:=$c4 $c4:=$c17 $c17:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==14? $t:=$c4 $c4:=$c18 $c18:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  - $pos==15? $t:=$c4 $c4:=$c19 $c19:=$t $pos:=$rnd $pos%=15 $rnd/=15 J(shuffle5) P(nop)
+  shuffle5:
+  - $rnd<140? $random*=25173 $random+=13849 $rnd:=$random J(shuffle5) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==1? $t:=$c5 $c5:=$c6 $c6:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==2? $t:=$c5 $c5:=$c7 $c7:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==3? $t:=$c5 $c5:=$c8 $c8:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==4? $t:=$c5 $c5:=$c9 $c9:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==5? $t:=$c5 $c5:=$c10 $c10:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==6? $t:=$c5 $c5:=$c11 $c11:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==7? $t:=$c5 $c5:=$c12 $c12:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==8? $t:=$c5 $c5:=$c13 $c13:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==9? $t:=$c5 $c5:=$c14 $c14:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==10? $t:=$c5 $c5:=$c15 $c15:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==11? $t:=$c5 $c5:=$c16 $c16:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==12? $t:=$c5 $c5:=$c17 $c17:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==13? $t:=$c5 $c5:=$c18 $c18:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  - $pos==14? $t:=$c5 $c5:=$c19 $c19:=$t $pos:=$rnd $pos%=14 $rnd/=14 J(shuffle6) P(nop)
+  shuffle6:
+  - $rnd<130? $random*=25173 $random+=13849 $rnd:=$random J(shuffle6) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  - $pos==1? $t:=$c6 $c6:=$c7 $c7:=$t $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  - $pos==2? $t:=$c6 $c6:=$c8 $c8:=$t $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  - $pos==3? $t:=$c6 $c6:=$c9 $c9:=$t $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  - $pos==4? $t:=$c6 $c6:=$c10 $c10:=$t $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  - $pos==5? $t:=$c6 $c6:=$c11 $c11:=$t $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  - $pos==6? $t:=$c6 $c6:=$c12 $c12:=$t $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  - $pos==7? $t:=$c6 $c6:=$c13 $c13:=$t $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  - $pos==8? $t:=$c6 $c6:=$c14 $c14:=$t $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  - $pos==9? $t:=$c6 $c6:=$c15 $c15:=$t $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  - $pos==10? $t:=$c6 $c6:=$c16 $c16:=$t $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  - $pos==11? $t:=$c6 $c6:=$c17 $c17:=$t $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  - $pos==12? $t:=$c6 $c6:=$c18 $c18:=$t $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  - $pos==13? $t:=$c6 $c6:=$c19 $c19:=$t $pos:=$rnd $pos%=13 $rnd/=13 J(shuffle7) P(nop)
+  shuffle7:
+  - $rnd<120? $random*=25173 $random+=13849 $rnd:=$random J(shuffle7) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=12 $rnd/=12 J(shuffle8) P(nop)
+  - $pos==1? $t:=$c7 $c7:=$c8 $c8:=$t $pos:=$rnd $pos%=12 $rnd/=12 J(shuffle8) P(nop)
+  - $pos==2? $t:=$c7 $c7:=$c9 $c9:=$t $pos:=$rnd $pos%=12 $rnd/=12 J(shuffle8) P(nop)
+  - $pos==3? $t:=$c7 $c7:=$c10 $c10:=$t $pos:=$rnd $pos%=12 $rnd/=12 J(shuffle8) P(nop)
+  - $pos==4? $t:=$c7 $c7:=$c11 $c11:=$t $pos:=$rnd $pos%=12 $rnd/=12 J(shuffle8) P(nop)
+  - $pos==5? $t:=$c7 $c7:=$c12 $c12:=$t $pos:=$rnd $pos%=12 $rnd/=12 J(shuffle8) P(nop)
+  - $pos==6? $t:=$c7 $c7:=$c13 $c13:=$t $pos:=$rnd $pos%=12 $rnd/=12 J(shuffle8) P(nop)
+  - $pos==7? $t:=$c7 $c7:=$c14 $c14:=$t $pos:=$rnd $pos%=12 $rnd/=12 J(shuffle8) P(nop)
+  - $pos==8? $t:=$c7 $c7:=$c15 $c15:=$t $pos:=$rnd $pos%=12 $rnd/=12 J(shuffle8) P(nop)
+  - $pos==9? $t:=$c7 $c7:=$c16 $c16:=$t $pos:=$rnd $pos%=12 $rnd/=12 J(shuffle8) P(nop)
+  - $pos==10? $t:=$c7 $c7:=$c17 $c17:=$t $pos:=$rnd $pos%=12 $rnd/=12 J(shuffle8) P(nop)
+  - $pos==11? $t:=$c7 $c7:=$c18 $c18:=$t $pos:=$rnd $pos%=12 $rnd/=12 J(shuffle8) P(nop)
+  - $pos==12? $t:=$c7 $c7:=$c19 $c19:=$t $pos:=$rnd $pos%=12 $rnd/=12 J(shuffle8) P(nop)
+  shuffle8:
+  - $rnd<110? $random*=25173 $random+=13849 $rnd:=$random J(shuffle8) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=11 $rnd/=11 J(shuffle9) P(nop)
+  - $pos==1? $t:=$c8 $c8:=$c9 $c9:=$t $pos:=$rnd $pos%=11 $rnd/=11 J(shuffle9) P(nop)
+  - $pos==2? $t:=$c8 $c8:=$c10 $c10:=$t $pos:=$rnd $pos%=11 $rnd/=11 J(shuffle9) P(nop)
+  - $pos==3? $t:=$c8 $c8:=$c11 $c11:=$t $pos:=$rnd $pos%=11 $rnd/=11 J(shuffle9) P(nop)
+  - $pos==4? $t:=$c8 $c8:=$c12 $c12:=$t $pos:=$rnd $pos%=11 $rnd/=11 J(shuffle9) P(nop)
+  - $pos==5? $t:=$c8 $c8:=$c13 $c13:=$t $pos:=$rnd $pos%=11 $rnd/=11 J(shuffle9) P(nop)
+  - $pos==6? $t:=$c8 $c8:=$c14 $c14:=$t $pos:=$rnd $pos%=11 $rnd/=11 J(shuffle9) P(nop)
+  - $pos==7? $t:=$c8 $c8:=$c15 $c15:=$t $pos:=$rnd $pos%=11 $rnd/=11 J(shuffle9) P(nop)
+  - $pos==8? $t:=$c8 $c8:=$c16 $c16:=$t $pos:=$rnd $pos%=11 $rnd/=11 J(shuffle9) P(nop)
+  - $pos==9? $t:=$c8 $c8:=$c17 $c17:=$t $pos:=$rnd $pos%=11 $rnd/=11 J(shuffle9) P(nop)
+  - $pos==10? $t:=$c8 $c8:=$c18 $c18:=$t $pos:=$rnd $pos%=11 $rnd/=11 J(shuffle9) P(nop)
+  - $pos==11? $t:=$c8 $c8:=$c19 $c19:=$t $pos:=$rnd $pos%=11 $rnd/=11 J(shuffle9) P(nop)
+  shuffle9:
+  - $rnd<100? $random*=25173 $random+=13849 $rnd:=$random J(shuffle9) P(nop)
+  - $pos==0? $pos:=$rnd $pos%=10 $rnd/=10 J(shuffle10) P(nop)
+  - $pos==1? $t:=$c9 $c9:=$c10 $c10:=$t $pos:=$rnd $pos%=10 $rnd/=10 J(shuffle10) P(nop)
+  - $pos==2? $t:=$c9 $c9:=$c11 $c11:=$t $pos:=$rnd $pos%=10 $rnd/=10 J(shuffle10) P(nop)
+  - $pos==3? $t:=$c9 $c9:=$c12 $c12:=$t $pos:=$rnd $pos%=10 $rnd/=10 J(shuffle10) P(nop)
+  - $pos==4? $t:=$c9 $c9:=$c13 $c13:=$t $pos:=$rnd $pos%=10 $rnd/=10 J(shuffle10) P(nop)
+  - $pos==5? $t:=$c9 $c9:=$c14 $c14:=$t $pos:=$rnd $pos%=10 $rnd/=10 J(shuffle10) P(nop)
+  - $pos==6? $t:=$c9 $c9:=$c15 $c15:=$t $pos:=$rnd $pos%=10 $rnd/=10 J(shuffle10) P(nop)
+  - $pos==7? $t:=$c9 $c9:=$c16 $c16:=$t $pos:=$rnd $pos%=10 $rnd/=10 J(shuffle10) P(nop)
+  - $pos==8? $t:=$c9 $c9:=$c17 $c17:=$t $pos:=$rnd $pos%=10 $rnd/=10 J(shuffle10) P(nop)
+  - $pos==9? $t:=$c9 $c9:=$c18 $c18:=$t $pos:=$rnd $pos%=10 $rnd/=10 J(shuffle10) P(nop)
+  - $pos==10? $t:=$c9 $c9:=$c19 $c19:=$t $pos:=$rnd $pos%=10 $rnd/=10 J(shuffle10) P(nop)
+  test:
+  - $sum==21? $player==1? $pairs1+=1 $remaining-=1 J(clear1) P(en_match)
+  - $sum==21? $player==2? $pairs2+=1 $remaining-=1 J(clear1) P(en_match)
+  - $sum==21? $player==3? $pairs3+=1 $remaining-=1 J(clear1) P(en_match)
+  - $sum==21? $player==4? $pairs4+=1 $remaining-=1 J(clear1) P(en_match)
+  - $player==$players? $player:=1 J(idle) P(en_player1)
+  - $player==1? $player+=1 J(idle) P(en_player2)
+  - $player==2? $player+=1 J(idle) P(en_player3)
+  - $player==3? $player+=1 J(idle) P(en_player4)
+speak:
+  en_continue: You can continue.
+  en_draw: The game is a draw.
+  en_empty: This field is empty. Chose another field.
+  en_finished: The game is finished.
+  en_hello: Welcome to the memory. How many players are you?
+  en_match: Greate, you found a pair!
+  en_not_playing: This player does not play.
+  en_not_started: Please chose first the number of players before to start the game.
+  en_pairs0: No pairs
+  en_pairs1: 1 pair
+  en_pairs10: 10 pairs
+  en_pairs2: 2 pairs
+  en_pairs3: 3 pairs
+  en_pairs4: 4 pairs
+  en_pairs5: 5 pairs
+  en_pairs6: 6 pairs
+  en_pairs7: 7 pairs
+  en_pairs8: 8 pairs
+  en_pairs9: 9 pairs
+  en_player1: It's the 1st player's turn.
+  en_player2: It's the 2nd player's turn.
+  en_player3: It's the 3rd player's turn.
+  en_player4: It's the 4th player's turn.
+  en_shuffle: The cards will be shuffled.
+  en_start: The game begins.
+  en_winner1: The 1st player has won.
+  en_winner2: The 2nd player has won.
+  en_winner3: The 3rd player has won.
+  en_winner4: The 4th player has won.
+welcome: en_hello

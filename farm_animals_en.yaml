@@ -1,0 +1,59 @@
+product-id: 912
+
+gme-lang: ENGLISH
+comment: CHOMPTECH DATA FORMAT CopyRight 2009 Ver2.xx.yyyy
+
+memory:
+  title: Farm Animal Memory
+  maxPlayers: 4
+  dpi: 1200
+  pixelSize: 3
+  alternativeSounds: false
+  pairs:
+    - cat
+    - cow
+    - dog
+    - donkey
+    - goat
+    - goose
+    - horse
+    - pig
+    - rooster
+    - sheep
+
+welcome: en_hello
+language: en
+
+media-path: media/%s
+
+speak:
+  en_hello: Welcome to the memory. How many players are you?
+  en_shuffle: The cards will be shuffled.
+  en_start: The game begins.
+  en_not_started: Please chose first the number of players before to start the game.
+  en_player1: It's the 1st player's turn.
+  en_player2: It's the 2nd player's turn.
+  en_player3: It's the 3rd player's turn.
+  en_player4: It's the 4th player's turn.
+  en_empty: This field is empty. Chose another field.
+  en_match: Greate, you found a pair!
+  en_continue: You can continue.
+  en_winner1: The 1st player has won.
+  en_winner2: The 2nd player has won.
+  en_winner3: The 3rd player has won.
+  en_winner4: The 4th player has won.
+  en_draw: The game is a draw.
+  en_not_playing: This player does not play.
+  en_finished: The game is finished.
+
+  en_pairs0: No pairs
+  en_pairs1: 1 pair
+  en_pairs2: 2 pairs
+  en_pairs3: 3 pairs
+  en_pairs4: 4 pairs
+  en_pairs5: 5 pairs
+  en_pairs6: 6 pairs
+  en_pairs7: 7 pairs
+  en_pairs8: 8 pairs
+  en_pairs9: 9 pairs
+  en_pairs10: 10 pairs

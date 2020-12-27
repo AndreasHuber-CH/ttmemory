@@ -1,0 +1,59 @@
+product-id: 911
+
+gme-lang: GERMAN
+comment: CHOMPTECH DATA FORMAT CopyRight 2009 Ver2.xx.yyyy
+
+memory:
+  title: Bauernhof Memory
+  maxPlayers: 4
+  dpi: 1200
+  pixelSize: 3
+  alternativeSounds: false
+  pairs:
+    - cat
+    - cow
+    - dog
+    - donkey
+    - goat
+    - goose
+    - horse
+    - pig
+    - rooster
+    - sheep
+
+welcome: de_hello
+language: de
+
+media-path: media/%s
+
+speak:
+  de_hello: Willkommen zum Memory. Wieviele Spieler seit ihr?
+  de_shuffle: Die Karten werden gemischt.
+  de_start: Das Spiel beginnt.
+  de_not_started: Bitte wählt zuerst die Anzahl Spieler, bevor ihr mit dem Spiel beginnt.
+  de_player1: Der erste Spieler ist an der Reihe.
+  de_player2: Der zweite Spieler ist an der Reihe.
+  de_player3: Der dritte Spieler ist an der Reihe.
+  de_player4: Der vierte Spieler ist an der Reihe.
+  de_empty: Dieses Feld is bereits leer. Wàhle ein anderes Feld.
+  de_match: Bravo, du hast ein Paar gefunden.
+  de_continue: Du darfst weiter spielen.
+  de_winner1: Der erste Spieler hat gewonnen.
+  de_winner2: Der zweite Spieler hat gewonnen.
+  de_winner3: Der dritte Spieler hat gewonnen.
+  de_winner4: Der vierte Spieler hat gewonnen.
+  de_draw: Es ist unentschieden.
+  de_not_playing: Dieser Spieler spielt nicht mit.
+  de_finished: Le jeu est terminé.
+
+  de_pairs0: Kein Paar
+  de_pairs1: Ein Paar
+  de_pairs2: 2 Paare
+  de_pairs3: 3 Paare
+  de_pairs4: 4 Paare
+  de_pairs5: 5 Paare
+  de_pairs6: 6 Paare
+  de_pairs7: 7 Paare
+  de_pairs8: 8 Paare
+  de_pairs9: 9 Paare
+  de_pairs10: 10 Paare
