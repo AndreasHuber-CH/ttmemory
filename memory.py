@@ -375,7 +375,7 @@ def drawOid(oid, x, y, size, round=True):
     path = f'{oidCacheDir}/oid-{oid}-{dpi}dpi-{pixelSize}px.png'
     if not os.path.isfile(path):
         # generated OID file
-        subprocess.run([tttool, "--code-dim", str(maxCardSize), '--pixel-size', str(pixelSize), '--dpi', dpi, "oid-code", str(oid)], check=True)
+        subprocess.run([tttool, "--code-dim", str(maxCardSize), '--pixel-size', str(pixelSize), '--dpi', str(dpi), "oid-code", str(oid)], check=True)
         os.rename(f'./oid-{oid}.png', path)
     # open and draw the image
     oidImg = Image.open(path).crop((0, 0, size+1, size+1)).convert("RGBA")
