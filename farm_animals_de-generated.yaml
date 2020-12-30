@@ -646,7 +646,7 @@ scripts:
 speak:
   de_continue: Du darfst weiter spielen.
   de_draw: Es ist unentschieden.
-  de_empty: Dieses Feld is bereits leer. Wàhle ein anderes Feld.
+  de_empty: Dieses Feld is bereits leer. Wähle ein anderes Feld.
   de_finished: Le jeu est terminé.
   de_hello: Willkommen zum Memory. Wieviele Spieler seit ihr?
   de_match: Bravo, du hast ein Paar gefunden.
